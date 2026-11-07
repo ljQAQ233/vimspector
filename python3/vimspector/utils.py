@@ -509,7 +509,7 @@ def AppendToBuffer( buf,
       line = max( len( buf ), 1 )
       end_line = line + max( len( lines ) - 1, 0 )
       end_col = len( lines[ -1 ] ) if lines else 0
-      Call( 'append', len( buf ) - 1, lines )
+      Call( 'appendbufline', buf.number, line - 1, line_or_lines )
     # After clearing the buffer (using buf[:] = None) there is always a single
     # empty line in the buffer object and no "is empty" method.
     elif len( buf ) > 1 or buf[ 0 ]:
